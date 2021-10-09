@@ -1,0 +1,111 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Light On-Off</title>
+        <style>
+            body {
+                background-color: #F4DF34FF;
+                padding: 0px;
+                margin: 0px;
+            }
+            .dori-outer {
+                display: flex;
+            }
+            .dori {
+                border: 4px solid #262314FF;
+                margin: auto;
+                height: 20vh;
+                border-radius: 0px 0px 4px 4px;
+            }
+            .holder-1 {
+                background-color: #76D2BDFF;
+                border: 8px solid #2D3246FF;
+                margin: auto;
+                height: 10px;
+                width: 48px;
+                border-radius: 25px 25px 0px 0px;
+            }
+            .holder-2 {
+                background-color: #76D2BDFF;
+                border: solid #2D3246FF;
+                border-width: 0px 8px 8px 8px;
+                margin: auto;
+                height: 10px;
+                width: 48px;
+
+            }
+            .buld-outer {
+                overflow: hidden;
+                position: absolute;
+            }
+            .bulb {
+                height: 150px;
+                width: 150px;
+                margin: auto;
+                border: 8px solid #2D3246FF;
+                border-radius: 50%;
+                position: relative;
+                top: -15px;
+                z-index: -1;
+            }
+        </style>
+        <script>
+            var cond = false;
+            const onOff =()=>{
+                if(cond){
+                    var cols = document.getElementsByClassName('holder-1');
+                    for(i = 0; i < cols.length; i++) {
+                        cols[i].style.backgroundColor = '#76D2BDFF';
+                        cols[i].style.borderColor = "#2D3246FF";
+                    }
+                    var cols2 = document.getElementsByClassName('holder-2');
+                    for(i = 0; i < cols2.length; i++) {
+                        cols2[i].style.backgroundColor = '#76D2BDFF';
+                        cols2[i].style.borderColor = "#2D3246FF";
+                    }
+                    var cols3 = document.getElementsByClassName('bulb');
+                    for(i = 0; i < cols3.length; i++) {
+                        cols3[i].style.backgroundColor = '#F4DF34FF';
+                        cols3[i].style.borderColor = "#2D3246FF";
+                    }
+                    document.body.style.backgroundColor = '#F4DF34FF ';
+                    cond = false;
+                } else {
+                    var cols = document.getElementsByClassName('holder-1');
+                    for(i = 0; i < cols.length; i++) {
+                        cols[i].style.backgroundColor = '#3A3A3AFF';
+                        cols[i].style.borderColor = "#3A3A3AFF";
+                    }
+                    var cols2 = document.getElementsByClassName('holder-2');
+                    for(i = 0; i < cols2.length; i++) {
+                        cols2[i].style.backgroundColor = '#3A3A3AFF';
+                        cols2[i].style.borderColor = "#3A3A3AFF";
+                    }
+                    var cols3 = document.getElementsByClassName('bulb');
+                    for(i = 0; i < cols3.length; i++) {
+                        cols3[i].style.backgroundColor = '#565656FF';
+                        cols3[i].style.borderColor = "#3A3A3AFF";
+                    }
+                    document.body.style.backgroundColor = '#565656FF';
+                    cond = true;
+                }
+            }
+        </script>
+    </head>
+    <body onclick="onOff()">
+        <div class="dori-outer">
+            <div class="dori"></div>
+        </div>
+        <div>
+            <div class="holder-1"></div>
+            <div class="holder-2"></div>
+            <div class="holder-2"></div>
+            <div class="bulb-outer">
+                <div class="bulb"></div>
+            </div>
+        </div>
+    </body>
+    </html>
